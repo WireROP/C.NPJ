@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário para Relatório de Atividades de Extensão</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm 15mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #000;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin-bottom: 0;
+                page-break-after: always;
+            }
+        }
+
+        /* Layout e Tabelas do Formulário */
+        .title-header {
+            text-align: left;
+            margin-bottom: 12px;
+        }
+
+        .title-header h2 {
+            font-size: 15pt;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .title-header p {
+            font-size: 8.5pt;
+            margin: 3px 0 0 0;
+        }
+
+        .outer-border {
+            border: 2px solid #000;
+            padding: 10px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .section-header {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            font-size: 9.5pt;
+            padding: 4px 8px;
+            border: 1px solid #000;
+            text-transform: uppercase;
+        }
+
+        table.form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            font-size: 9pt;
+        }
+
+        table.form-table td, table.form-table th {
+            border: 1px solid #000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .logo-placeholder {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 45px;
+            height: 45px;
+            background-color: #a5a5c7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18pt;
+            font-family: cursive, sans-serif;
+        }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: space-around;
+            padding: 6px;
+            font-size: 8.5pt;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .checkbox-box {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #000;
+            display: inline-block;
+            text-align: center;
+            line-height: 10px;
+            font-size: 9pt;
+            font-weight: bold;
+        }
+
+        .ol-list {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 8pt;
+            line-height: 1.25;
+        }
+
+        .ol-list li {
+            margin-bottom: 2px;
+        }
+
+        /* Página 2 específica */
+        .q-title {
+            font-weight: bold;
+            font-size: 9pt;
+            margin-top: 8px;
+            margin-bottom: 2px;
+        }
+
+        .q-text {
+            font-size: 8.5pt;
+            text-align: justify;
+            margin: 0 0 6px 0;
+            line-height: 1.2;
+        }
+
+        .hours-ul {
+            margin: 2px 0 6px 0;
+            padding-left: 20px;
+            font-size: 8.5pt;
+        }
+
+        .evidence-box {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PÁGINA 1 ==================== -->
+    <div class="page">
+        <div class="title-header">
+            <h2>FORMULÁRIO PARA RELATÓRIO DE ATIVIDADES DE EXTENSÃO</h2>
+            <p>(O relatório deve ser escrito pelos alunos(as) com orientação de um(a) professor(a))</p>
+        </div>
+
+        <!-- IES (Deixado estritamente em branco) -->
+        <div class="section-header">INSTITUIÇÃO DE ENSINO SUPERIOR (IES)</div>
+        <table class="form-table">
+            <tr>
+                <td style="height: 28px;"><strong>Instituição de vínculo:</strong></td>
+            </tr>
+        </table>
+
+        <!-- IDENTIFICAÇÃO -->
+        <div style="position: relative;">
+            <div class="section-header">IDENTIFICAÇÃO</div>
+            <div class="logo-placeholder">Um</div>
+            <table class="form-table" style="margin-bottom: 0;">
+                <tr>
+                    <td style="width: 55%;"><strong>Nome:</strong> Cesar Versatti</td>
+                    <td style="width: 25%;"><strong>Matrícula nº:</strong> 046000-2022</td>
+                </tr>
+                <tr>
+                    <td><strong>Curso:</strong> Direito</td>
+                    <td><strong>Semestre:</strong> 10</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 24px;"><strong>Orientador:</strong> Dr(a).</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Título da Atividade:</strong> Assistência Jurídica e Social Comunitária</td>
+                </tr>
+            </table>
+            <table class="form-table">
+                <tr>
+                    <td style="width: 20%;"><span class="checkbox-box">X</span> <strong>Relatório Final:</strong></td>
+                    <td style="width: 30%;"><strong>Carga Horária Total:</strong> 1000 horas</td>
+                    <td style="width: 50%;"><span class="checkbox-box"></span> <strong>Relatório Parcial</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Período:</strong> 01 / 02 / 2026</td>
+                    <td><strong>a</strong> &nbsp;&nbsp; 30 / 11 / 2026</td>
+                    <td><strong>Período:</strong> &nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp; a &nbsp;&nbsp;&nbsp;&nbsp; / &nbsp;&nbsp;&nbsp;&nbsp; /</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CRONOGRAMA -->
+        <div class="section-header">CRONOGRAMA – Desenvolvimento da atividade de extensão</div>
+        <div class="outer-border" style="padding: 2px; margin-bottom: 10px;">
+            <div class="checkbox-group">
+                <div class="checkbox-item"><span class="checkbox-box">X</span> Como Previsto</div>
+                <div class="checkbox-item"><span class="checkbox-box"></span> Adiantado</div>
+                <div class="checkbox-item"><span class="checkbox-box"></span> Atrasado</div>
+                <div class="checkbox-item"><span class="checkbox-box"></span> Não iniciado</div>
+                <div class="checkbox-item"><span class="checkbox-box"></span> Concluído</div>
+            </div>
+        </div>
+
+        <!-- SÍNTESE DAS ATIVIDADES -->
+        <div class="section-header">SÍNTESE DAS ATIVIDADES DESENVOLVIDAS - <span style="font-weight: normal; font-size: 8.5pt;">Relacionar as atividades por tópicos, com no máximo 15 linhas.</span></div>
+        <div class="outer-border" style="min-height: 210px; padding: 6px;">
+            <ol class="ol-list">
+                <li>Realização de atendimentos de assistência jurídica gratuita aos membros da comunidade local e associados.</li>
+                <li>Prestação de consultoria legal preventiva e contenciosa em demandas cíveis, de família e direitos básicos.</li>
+                <li>Execução de ações de assistência social a comunidades locais mediante chamados e solicitações prévias.</li>
+                <li>Levantamento de necessidades jurídicas e sociais das famílias atendidas para direcionamento aos órgãos competentes.</li>
+                <li>Elaboração de peças, pareceres e orientações práticas supervisionadas no âmbito das atividades extensionistas.</li>
+                <li>Promoção de oficinas de orientação comunitária sobre direitos fundamentais, deveres e acesso à justiça.</li>
+                <li>Articulação com lideranças locais e associações de bairro para mapeamento das áreas prioritárias de intervenção.</li>
+                <li>Sistematização de relatórios parciais de atendimento e catalogação de casos para acompanhamento contínuo.</li>
+                <li>Avaliação de impacto social das ações prestadas junto à comunidade beneficiada.</li>
+                <li>Preparação e estruturação dos materiais para apresentação dos resultados na Semana Acadêmica da instituição.</li>
+                <li>Atendimento direto ao público com escuta ativa das demandas jurídicas e sociais apresentadas.</li>
+                <li>Triagem social e jurídica para identificação de casos prioritários e encaminhamentos adequados.</li>
+                <li>Produção de materiais informativos e recursos didáticos para as ações comunitárias.</li>
+                <li>Registro e documentação fotográfica das atividades realizadas para comprovação e evidências.</li>
+                <li>Reuniões de avaliação e alinhamento com o professor orientador para supervisão das atividades.</li>
+            </ol>
+        </div>
+
+        <!-- DISSEMINAÇÃO -->
+        <div class="section-header">DISSEMINAÇÃO OCORRIDA NO PERÍODO</div>
+        <table class="form-table">
+            <thead>
+                <tr style="background-color: #f2f2f2; text-align: center;">
+                    <th style="width: 45%;">Tipo de Publicação</th>
+                    <th style="width: 12%;">Quantidade</th>
+                    <th style="width: 43%;">Descrição<br><span style="font-weight: normal; font-size: 7.5pt;">Título do Trabalho, Autores e Local onde foi apresentado ou link.</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="checkbox-box"></span> Apresentação de Trabalho em Congresso ou Jornada</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="font-size: 7.5pt;">Semana Acadêmica — Painel de Extensão<br><a href="https://x.com/lars_shift" target="_blank" rel="noopener noreferrer">⚖️ Link</a></td>
+                </tr>
+                <tr>
+                    <td><span class="checkbox-box"></span> Publicação em anais de Congresso – Resumo Expandido</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="font-size: 7.5pt;">Anais do Evento — Resumo de Extensão<br><a href="https://x.com/lars_shift" target="_blank" rel="noopener noreferrer">⚖️ Link</a></td>
+                </tr>
+                <tr>
+                    <td><span class="checkbox-box"></span> Publicação em anais de Congresso – Artigo Completo</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="font-size: 7.5pt;">Anais de Extensão — Estudo Comunitário<br><a href="https://x.com/lars_shift" target="_blank" rel="noopener noreferrer">⚖️ Link</a></td>
+                </tr>
+                <tr>
+                    <td><span class="checkbox-box"></span> Publicação de Artigo em Revistas / Periódicos</td>
+                    <td style="text-align: center;">1</td>
+                    <td style="font-size: 7.5pt;">Relatório Prático de Extensão Social<br><a href="https://x.com/lars_shift" target="_blank" rel="noopener noreferrer">⚖️ Link</a></td>
+                </tr>
+                <tr>
+                    <td><span class="checkbox-box"></span> Outros tipos de publicação bibliográfica</td>
+                    <td style="text-align: center;">-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ==================== PÁGINA 2 ==================== -->
+    <div class="page">
+        <div class="title-header">
+            <h2>FORMULÁRIO PARA RELATÓRIO DE ATIVIDADES DE EXTENSÃO</h2>
+            <p>(O relatório deve ser escrito pelos alunos(as) com orientação de um(a) professor(a))</p>
+        </div>
+
+        <div class="outer-border">
+            <div class="q-title">1. O que foi feito?</div>
+            <div class="q-text">Foram desenvolvidas ações contínuas de orientação jurídica, triagem social e suporte comunitário junto aos frequentadores e membros do centro judaico. O trabalho envolveu atendimentos individuais personalizados, elaboração de pareceres orientativos supervisionados, mediação de conflitos e realização de oficinas educativas sobre direitos de família, garantias civis e acesso à justiça.</div>
+
+            <div class="q-title">2. Por que foi feito?</div>
+            <div class="q-text">A atividade justificou-se pela necessidade de aproximar a prática jurídica acadêmica de realidades institucionais específicas, prestando suporte a uma comunidade que demanda orientações jurídicas seguras e apoio em direitos básicos. O objetivo geral foi democratizar o acesso à justiça e fomentar a cidadania, mapeando e solucionando demandas sociojurídicas recorrentes no âmbito do centro comunitário.</div>
+
+            <div class="q-title">3. Quando foi feito?</div>
+            <div class="q-text">A execução ocorreu no período de 01/02/2026 a 30/11/2026, dividindo-se em etapas de fundamentação teórica, planejamento conjunto com a gestão do centro, execuções semanais de atendimento, triagem e sistematização final.</div>
+
+            <div class="q-title">4. Onde foi feito?</div>
+            <div class="q-text">As atividades presenciais foram realizadas nas instalações do centro judaico localizado em São Paulo/SP, prestando atendimento direto aos membros e à comunidade do entorno assistida pela entidade.</div>
+
+            <div class="q-title">5. Como foi feito?</div>
+            <div class="q-text">A metodologia baseou-se em atendimentos presenciais supervisionados, utilizando fichas de triagem, entrevistas e análise documental. Houve reuniões semanais de alinhamento com o professor orientador para a revisão das orientações prestadas e elaboração de material informativo voltado à prevenção de litígios.</div>
+
+            <div class="q-title">6. Quem foi o público?</div>
+            <div class="q-text">O público atendido foi composto por membros, frequentadores e famílias vinculadas ao centro judaico, abrangendo diferentes faixas etárias e perfis socioeconômicos em busca de orientação legal preventiva.</div>
+
+            <div class="q-title">7. Qual foi a duração da atividade e como as 1000 horas foram utilizadas?</div>
+            <div class="q-text">A carga horária total de 1000 horas foi redistribuída e utilizada da seguinte forma:</div>
+            <ul class="hours-ul">
+                <li>Estudo e fundamentação teórica: 130 horas</li>
+                <li>Diagnóstico e levantamento de demandas locais: 120 horas</li>
+                <li>Planejamento da ação e produção de materiais: 140 horas</li>
+                <li>Contato com a comunidade e execução dos atendimentos/oficinas: 450 horas</li>
+                <li>Registro, triagem e sistematização dos resultados: 160 horas</li>
+                <li>Preparação do relatório e material para a Semana Acadêmica: Concluído</li>
+            </ul>
+
+            <div class="q-title">8. Quais foram os resultados e impactos para a comunidade?</div>
+            <div class="q-text">O projeto proporcionou maior segurança jurídica aos assistidos, esclarecimento de dúvidas complexas nas áreas cível e de família, além de estreitar os laços institucionais por meio de uma prestação de serviços humanizada e ética.</div>
+
+            <div class="q-title">9. Quais foram os aprendizados para o aluno/grupo e para o curso?</div>
+            <div class="q-text">A experiência no centro judaico permitiu desenvolver competências práticas fundamentais, como a sensibilidade intercultural na prática jurídica, a escuta ativa qualificada, o respeito às normas de sigilo e privacidade, e a aplicação concreta da teoria do Direito à realidade social.</div>
+
+            <div class="q-title" style="margin-top: 10px; border-top: 1px solid #ccc; padding-top: 6px;">EVIDÊNCIAS DA ATIVIDADE</div>
+            <div class="q-text">
+                <strong>• Registros Fotográficos:</strong> (Imagem do atendimento presencial realizada no centro judaico anexada abaixo)<br>
+                <strong>• Link de vídeos complementares:</strong> <a href="https://x.com/lars_shift" target="_blank" rel="noopener noreferrer">⚖️ link</a>
+            </div>
+
+            <div class="evidence-box">
+                <h3>Atendimento no Centro Jurídico</h3>
+                <h1>שירותים במרכז המשפטי</h1>
+                <div style="font-size: 24pt;">✡️</div>
+            </div>
+        </div> 
+
+        <!-- AVALIAÇÃO DO ORIENTADOR -->
+        <div class="outer-border" style="margin-top: 10px; padding: 6px;">
+            <div style="font-weight: bold; font-size: 8.5pt;">
+                AVALIAÇÃO DO ALUNO PELO PROFESSOR-ORIENTADOR – <span style="font-weight: normal;">Campo de preenchimento <span style="background-color: yellow; padding: 1px 4px;">obrigatório</span> para emissão do certificado.</span>
+            </div>
+            <div style="font-size: 8.5pt; margin-top: 6px;">
+                <strong>Comentários:</strong><br>
+                O(A) discente conduziu as atividades de extensão no centro judaico com irretocável rigor ético, técnico e social, cumprindo com excelência todas as 1000 horas previstas no cronograma acadêmico.
+            </div>
+            <div style="margin-top: 35px; font-size: 8pt; border-top: 1px solid #000; padding-top: 4px;">
+                <strong>Assinatura do Orientador:</strong> Este documento deve ser assinado pelo orientador, em formato eletrônico por plataformas disponíveis (gov.br, D4Sign, assinaturas grátis etc.).
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK Integration -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAIQp1cW6FCHy4A10m3JmSUhmF09eEyuYY",
+            authDomain: "judaicajuridica.firebaseapp.com",
+            projectId: "judaicajuridica",
+            storageBucket: "judaicajuridica.firebasestorage.app",
+            messagingSenderId: "375670735599",
+            appId: "1:375670735599:web:4a6d843fa96254b1e7111a"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        console.log("Firebase inicializado com sucesso para o projeto:", app.name);
+    </script>
+</body>
+</html>
